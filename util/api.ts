@@ -74,11 +74,11 @@ export const getInfo: ( user_id: number, uid: string, region: string, cookie: st
 								bot.client.sendPrivateMsg( user_id, `动物已经来了，将在${ new Date( end_time ).toLocaleTimeString() }结束来访，请及时收取奖励(${ award_num }摩拉)。` );
 							} )
 						}
-					}
-					
-					if ( sys_time_now < end_time ) {
+					}else if ( sys_time_now < end_time ) {
 						// 动物已经来了
 						data = `动物将在${ new Date( end_time ).toLocaleTimeString() }结束来访，请及时收取奖励(${ award_num }摩拉)。\n` + data;
+					} else {
+						// do nothing
 					}
 				}
 				
