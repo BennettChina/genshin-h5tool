@@ -38,11 +38,11 @@ export const getInfo: ( user_id: number, uid: string, region: string, cookie: st
 				}
 				
 				let {
-					outgoing_info: { interval, status },
+					outgoing_info: { countdown, status },
 					animal: { start_time, end_time, has_award, award_num },
 					now
 				}: {
-					outgoing_info: { interval: number, status: string },
+					outgoing_info: { countdown: number, status: string },
 					animal: { start_time: number, end_time: number, has_award: boolean, award_num: number },
 					now: number
 				} = r.data.data;
@@ -52,7 +52,7 @@ export const getInfo: ( user_id: number, uid: string, region: string, cookie: st
 					return;
 				}
 				
-				let back_time = interval + now;
+				let back_time = countdown + now;
 				let sys_time_now = Date.now();
 				back_time = back_time * 1000;
 				if ( sys_time_now > back_time ) {
