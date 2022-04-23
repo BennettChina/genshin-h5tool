@@ -6,7 +6,7 @@ import { AuthLevel } from "@modules/management/auth";
 const getH5: OrderConfig = {
 	type: "order",
 	cmdKey: "genshin-h5tool.get-h5",
-	desc: [ "查看可莉出游结束时间", "" ],
+	desc: [ "查看可莉出游结束时间", "(服务序号)默认使用第一个" ],
 	headers: [ "geth5" ],
 	regexps: [ "" ],
 	scope: MessageScope.Private,
